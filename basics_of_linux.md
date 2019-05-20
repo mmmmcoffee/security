@@ -323,6 +323,16 @@ awk 'BEGIN{printf "IP-address \tPort\n"} /nop/ {print $3} END {printf "End of th
 
 Here we are printing IP-address    PORT to the first line of the file.
 
+#### tee
+Tee can be used to read from standard input and write to standard output and files. It's normally used to split the output of a program so it can be displayed and saved in a file
+
+Example:
+Watching/filtering a log in real time, and saving it later for analysis
+```
+tail -f /var/log/nginx/access.log | grep --line-buffered "HTTP" | tee -a http.log
+```
+
+
 ## 3. User management
 
 There are two commands to add a user in linux: `adduser` or useradd. `adduser`is a perl-script that facilitate the process, and useradd is the native linux binary.
