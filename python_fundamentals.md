@@ -50,3 +50,20 @@ To install package
 ```bash
 pip install package
 ```
+
+##Connecting to a port
+```
+import socket
+import sys
+
+
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+port = 1392
+
+s.connect(('172.30.75.139',port))
+
+while True:
+    line = s.recv(1024)
+    s.send("yes\n")
+    ...
+```
