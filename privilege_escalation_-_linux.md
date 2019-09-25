@@ -360,6 +360,7 @@ cat /etc/fstab
 ### NFS Share
 
 If you find that a machine has a NFS share you might be able to use that to escalate privileges. Depending on how it is configured.
+You may have to check out if it has no_root_squash enabled? Look at NFSpy, it may be able to find it for you. https://github.com/bonsaiviking/NfSpy
 
 ```
 # First check if the target machine has any NFS shares
